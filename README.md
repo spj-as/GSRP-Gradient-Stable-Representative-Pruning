@@ -24,6 +24,7 @@ Activation Descriptor
 For each filter:
 
 $$a_i = \text{AvgActivation}(i)$$
+
 This summarizes the filter’s average response across samples and spatial positions.
 
 Redundancy Grouping
