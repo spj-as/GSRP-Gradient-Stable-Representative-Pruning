@@ -19,7 +19,7 @@ Together, these form a two-stage pruning pipeline that produces subnetworks that
 
 Filter-level pruning identifies and removes convolutional filters that exhibit redundant activation behavior.
 
-Activation Descriptor
+### Activation Descriptor
 
 For each filter:
 
@@ -27,12 +27,12 @@ $$a_i = \text{AvgActivation}(i)$$
 
 This summarizes the filter’s average response across samples and spatial positions.
 
-Redundancy Grouping
+### Redundancy Grouping
 
 Cluster $\{a_i\}$ to find filters with similar activation behavior.
 All filters in the same cluster $C$ are considered redundant.
 
-Representative Selection
+### Representative Selection
 
 Keep the filter with the highest importance score $S_i$:
 
@@ -47,23 +47,23 @@ This step reduces model width, giving real inference-time speedups.
 
 Weight-level GSRP constructs a noise-resilient importance score using gradients across multiple batches.
 
-1. Cross-batch gradient sign consistency
+### Cross-batch gradient sign consistency
 
 $$C_i = \left| \frac{1}{T} \sum_{t=1}^{T} \text{sign}(g_i^{(t)}) \right|$$
 
 Measures stability of gradient direction.
 
-2. Average gradient magnitude
+###  Average gradient magnitude
 
 $$M_i = \frac{1}{T} \sum_{t=1}^{T} |g_i^{(t)}|$$
 
 Measures the strength of the gradient signal.
 
-3. Stability-aware importance score
+###  Stability-aware importance score
 
 $$S_i = C_i \cdot M_i$$
 
-4. Pruning
+### Pruning
 
 Prune weights with low $S_i$.
 
