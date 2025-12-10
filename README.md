@@ -88,6 +88,6 @@ This hierarchical pruning achieves:
 
 Evaluated on:
 	•	CIFAR-10
-	•	CIFAR-10N (real noisy labels)
+	•	CIFAR-10N
 	•	CIFAR-100N
 
