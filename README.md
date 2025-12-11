@@ -1,4 +1,4 @@
-# GSRP-Gradient-Stable-RepresentativeActivation Descriptor
+# GSRP-Gradient-Stable-Representative-Pruning
 
 
 GSRP is a two-stage one-shot pruning framework designed to improve robustness and compactness under noisy training conditions.
